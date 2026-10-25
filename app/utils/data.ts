@@ -1,0 +1,123 @@
+// Site content. Edit copy, prices and tags here.
+
+export const money = (n: number) => '$' + Math.round(n * 100) / 100
+
+export interface SaleItem { title: string; price: number; style: string; subjects: string[] }
+
+// style/subject tags drive the Filter By sidebar on Art For Sale
+export const SALE: SaleItem[] = [
+  { title: 'Indian Lady', price: 110, style: 'fine-art', subjects: ['people'] },
+  { title: 'Seven Horses', price: 100, style: 'abstract', subjects: ['wildlife'] },
+  { title: 'Spider Man', price: 80, style: 'mixed-media', subjects: ['people'] },
+  { title: 'White Lady', price: 130, style: 'fine-art', subjects: ['people'] },
+  { title: 'King of Lion', price: 120, style: 'modern', subjects: ['wildlife'] },
+  { title: 'Skull', price: 140, style: 'mixed-media', subjects: ['people'] },
+  { title: 'Side Face', price: 100, style: 'abstract', subjects: ['people'] },
+  { title: 'Sad Girl', price: 130, style: 'modern', subjects: ['people'] },
+  { title: 'Mixing', price: 150, style: 'abstract', subjects: ['people', 'place'] },
+  { title: 'Deer', price: 160, style: 'modern', subjects: ['wildlife'] },
+  { title: 'Beautiful Blue', price: 150, style: 'mixed-media', subjects: ['people'] },
+  { title: 'Laughing Girl', price: 140, style: 'modern', subjects: ['people'] },
+  { title: 'Boat in the Sea', price: 90, style: 'fine-art', subjects: ['place'] },
+  { title: 'Apsara', price: 110, style: 'modern', subjects: ['people'] },
+  { title: 'Beautiful Apsara', price: 150, style: 'mixed-media', subjects: ['love', 'people'] },
+  { title: 'Slim Nose', price: 100, style: 'fine-art', subjects: ['people'] }
+]
+export const STYLES = [
+  { value: 'abstract', label: 'Abstract' }, { value: 'fine-art', label: 'Fine Art' },
+  { value: 'mixed-media', label: 'Mixed Media' }, { value: 'modern', label: 'Modern' }
+]
+export const SUBJECTS = [
+  { value: 'love', label: 'Love' }, { value: 'people', label: 'People' },
+  { value: 'place', label: 'Place' }, { value: 'wildlife', label: 'Wildlife' }
+]
+
+export const EXHIBITIONS = {
+  now: [['January', 60], ['February', 70], ['March', 60], ['April', 60], ['May', 50], ['June', 60], ['July', 60], ['August', 70], ['September', 60]],
+  soon: [['October', 60], ['November', 80], ['December', 60], ['Monday', 50], ['Tuesday', 60], ['Wednesday', 70], ['Thursday', 60], ['Friday', 70], ['Saturday', 60]]
+} as Record<'now' | 'soon', [string, number][]>
+
+export const EVENT_PRICE = 80
+export const EVENTS = {
+  now: [
+    ['Modern Art Event', 'Chip Mong 271', '13:00-17:00'], ['Adorable Art Event', 'Sensok', '13:00-17:00'],
+    ['Aesthetic Art Event', 'Aeon 1', '14:00-18:00'], ['Traditional Art Event', 'Khmer museum', '14:00-18:00'],
+    ['Wonderful Art Event', 'Aeon 2', '13:00-17:00'], ['Pretty Art Event', 'Boeng KengKong', '13:00-17:00'],
+    ['Amazing Art Event', 'Aeon 3', '14:00-18:00'], ['Lovely Art Event', 'Jroy Jongva', '14:00-18:00']
+  ],
+  soon: [
+    ['Takeo Art Event', 'Takeo museum', '13:00-17:00'], ['Kompong Thom Art Event', 'Kompong Thom', '14:00-18:00'],
+    ['Kompot Art Event', 'Kompot', '14:00-18:00'], ['Siem Reap Art Event', 'Siem Reap', '13:00-17:00'],
+    ['Kep Art Event', 'Kep', '13:00-17:00'], ['Kompong Cham Art Event', 'Kompong Cham', '14:00-18:00'],
+    ['Koh Kong Art Event', 'Koh Kong', '13:00-17:00'], ['Kompong Speu Art Event', 'Kompong Speu', '13:00-17:00']
+  ]
+} as Record<'now' | 'soon', [string, string, string][]>
+
+// Exhibited Art mosaic: [width, height] of each source crop (cell 10 also has a hi-res lightbox version)
+export const MOSAIC_SIZES: [number, number][] = [
+  [328, 175], [328, 175], [415, 268], [307, 541], [662, 363], [415, 268],
+  [309, 541], [328, 175], [328, 175], [662, 541], [414, 540]
+]
+
+// Navigation. "Art Gallery" is a dropdown parent (no page of its own); Khmer Culture is a separate main item.
+export const GALLERY_MENU = [
+  { label: 'Art for Sale', to: '/art-for-sale' },
+  { label: 'New Media Art', to: '/new-media-art' },
+  { label: 'Exhibited Art', to: '/exhibited-art' }
+]
+export const MAIN_NAV = [
+  { label: 'Exhibition', to: '/exhibition' },
+  { label: 'Event', to: '/event' },
+  { label: 'Khmer Culture', to: '/khmer-culture' },
+  { label: 'Contact Us', to: '/contact' }
+]
+
+export const SOCIAL = [
+  { name: 'Facebook', url: 'https://www.facebook.com/', d: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/', d: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' },
+  { name: 'YouTube', url: 'https://www.youtube.com/', d: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z' },
+  { name: 'Instagram', url: 'https://www.instagram.com/', d: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z' }
+]
+
+export const slugify = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+// ---- Detail pages -----------------------------------------------------------
+// The design supplies one worked example per detail page. Venue, date and description are the
+// design's sample copy, shared by every ticket until real per-item data exists.
+export const TICKET_SAMPLE = {
+  host: 'Galence Eva Presemhuber',
+  address: '2nd Bright, Prek Leab',
+  date: 'Fri, Nov 7, 2024',
+  time: '6pm - 8pm (2nd floor)',
+  description: 'The logic of living in an information age dictates the ways in which we recognise different images; increasingly disparate visual bytes are stored instantaneously in our brains with little significance. What is the meaning of art in the age of post-mechanical reproduction?'
+}
+export const exhibitionSlug = (name: string) => slugify(name)
+export const eventSlug = (name: string) => slugify(name)
+export const saleSlug = (title: string) => slugify(title)
+export const DETAIL_IMG: Record<string, string> = {
+  'exhibition:february': '/img/detail/exhibition-february.webp',
+  'event:wonderful-art-event': '/img/detail/event-wonderful.webp',
+  'sale:spider-man': '/img/detail/art-spiderman.webp'
+}
+export const ART_SIZE = { width: '100cm', height: '120cm' } // sample dimensions from the design
+
+export interface CultureItem { title: string; tag: string; slug: string; img: string }
+const CULTURE: [string, string][] = [
+  ['Apsara Dance', 'Historical'], ['Traditional Day’s Color', 'Traditional'], ['Trudeau Dance', 'Traditional'], ['Khmer’s Wedding', 'Traditional'],
+  ['ChaiYam', 'Traditional'], ['Peacock Dance', 'Traditional'], ['Ethnic Dance', 'Traditional'], ['Buddhism', 'Culture'],
+  ['Kos Trolork Dance', 'Traditional'], ['Khmer New Year', 'Traditional'], ['Kun Khmer', 'Culture'], ['Lkorn Khorl', 'Culture']
+]
+export const KHMER_CULTURE: CultureItem[] = CULTURE.map(([title, tag], i) => ({
+  title, tag, slug: slugify(title), img: `/img/khmer/card-${String(i + 1).padStart(2, '0')}.webp`
+}))
+export const APSARA = {
+  title: 'Apsara Dance with Angkor Wat Background',
+  img: '/img/khmer/apsara-detail.webp',
+  elements: [['Music', 'Traditional Khmer Song'], ['Dance', 'Apsara (Women)'], ['Costume', 'Apsara Costume']],
+  history: "Apsara is used to call fairies of clouds and water. When they play, sing, and dance, plants and animals multiply and flourish. Therefore, Cambodians respect Apsara as the Goddess of Prosperity. These girls with sleek and beautiful figures are also included in Cambodian poetry and music works. Apsaras often dance and sing for the male gods at the party to celebrate victory over the devil. Apsara dance was introduced into the country and became a thriving art around the 1st century AD. During the Angkor, this dance was performed only for kings on important holidays or occasions in honor of Hindu gods. Under King Jayavarman VII, the recorded number of Apsara dancers reached 3,000, larger than the capital's population at that time. An Apsara dance performance includes the main character and a group of dancers acting like fairies walking in the rose garden. Different from the traditional dances of other countries in the world, Apsara requires slow but delicate movements to fully exude the beauty of the dancer and the uniqueness of the artistic dance."
+}
+export const ORDERS = [
+  { id: '#1234', status: 'Shipped', date: 'Dec 12, 2021', img: '/img/account/order-1.webp' },
+  { id: '#5678', status: 'Delivered', date: 'Jan 25, 2022', img: '/img/account/order-2.webp' },
+  { id: '#9012', status: 'Processing', date: 'Feb 8, 2022', img: '/img/account/order-3.webp' }
+]
